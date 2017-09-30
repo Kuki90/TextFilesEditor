@@ -16,12 +16,12 @@
       <AnchorPane prefHeight="200.0" prefWidth="200.0">
          <children>
             <TextArea fx:id="textArea" layoutX="24.0" layoutY="27.0" opacity="0.6" prefHeight="241.0" prefWidth="375.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="25.0" />
-            <ImageView fx:id="loadButton" fitHeight="80.0" fitWidth="80.0" layoutX="64.0" layoutY="293.0" onMouseClicked="#mouseClicked" onMouseEntered="#mouseOverOn" onMouseExited="#mouseOverOff" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="60.0">
+            <ImageView fx:id="loadButton" fitHeight="80.0" fitWidth="80.0" layoutX="64.0" layoutY="293.0" onMouseClicked="#loadButtonMouseClicked" onMouseEntered="#mouseOverOn" onMouseExited="#mouseOverOff" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="60.0" AnchorPane.leftAnchor="60.0">
                <image>
                   <Image url="@loadButton.png" />
                </image>
             </ImageView>
-            <ImageView fx:id="saveButton" fitHeight="80.0" fitWidth="80.0" layoutX="269.0" layoutY="266.0" onMouseClicked="#mouseClicked" onMouseEntered="#mouseOverOn" onMouseExited="#mouseOverOff" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="60.153846740722656" AnchorPane.rightAnchor="60.0">
+            <ImageView fx:id="saveButton" fitHeight="80.0" fitWidth="80.0" layoutX="269.0" layoutY="266.0" onMouseClicked="#saveButtonMouseClicked" onMouseEntered="#mouseOverOn" onMouseExited="#mouseOverOff" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="60.153846740722656" AnchorPane.rightAnchor="60.0">
                <image>
                   <Image url="@saveButton.png" />
                </image>

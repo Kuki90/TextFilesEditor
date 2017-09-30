@@ -11,7 +11,7 @@ import java.util.List;
 
 public class FileIOManager {
 
-    public void writeFile(File file, String text) {
+    void writeFile(File file, String text) {
         try (PrintWriter writer = new PrintWriter(new FileWriter(file, false))) {
             writer.append(text);
         } catch (IOException e) {
@@ -19,7 +19,7 @@ public class FileIOManager {
         }
     }
 
-    public List<String> readFile(File file) {
+    List<String> readFile(File file) {
         try {
             return Files.readAllLines(file.toPath(), Charset.forName("UTF-8"));
         } catch (IOException e) {

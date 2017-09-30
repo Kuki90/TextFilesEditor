@@ -1,15 +1,11 @@
 package view;
 
-import data.FileIOManager;
+import data.EditorService;
 import javafx.fxml.FXML;
 import javafx.scene.control.TextArea;
 import javafx.scene.effect.Glow;
 import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Window;
-
-import java.io.File;
-import java.util.List;
 
 public class EditorController {
 
@@ -34,43 +30,14 @@ public class EditorController {
     }
 
     @FXML
-    private void mouseClicked(MouseEvent e) {
-        String buttonType = buttonPressedType(e);
-        if ("saveButton".equals(buttonType)) {
-            saveFile();
-        } else {
-            loadFile();
-        }
+    private void loadButtonMouseClicked() {
+        EditorService editorService = new EditorService();
+        editorService.loadFile(textArea);
     }
 
-    private String buttonPressedType(MouseEvent e) {
-        return e.getPickResult().getIntersectedNode().getId();
-    }
-
-    private void loadFile() {
-        FileLoader fileLoader = createLoaderView();
-        FileIOManager fileIO = new FileIOManager();
-        File fileToOpen = fileLoader.loadFile();
-        List<String> text = fileIO.readFile(fileToOpen);
-        textArea.clear();
-        for (String line : text) {
-            textArea.appendText(line + "\n");
-        }
-    }
-
-    private void saveFile() {
-        FileLoader fileLoader = createLoaderView();
-        FileIOManager fileIO = new FileIOManager();
-        File fileToSave = fileLoader.saveFile();
-        String text = textArea.getText();
-        fileIO.writeFile(fileToSave, text);
-    }
-
-    private FileLoader createLoaderView() {
-        return new FileLoader(getStage());
-    }
-
-    private Window getStage() {
-        return textArea.getScene().getWindow();
+    @FXML
+    private void saveButtonMouseClicked() {
+        EditorService editorService = new EditorService();
+        editorService.saveFile(textArea);
     }
 }
